@@ -1,0 +1,19 @@
+name: Discussion Trigger Workflow
+
+on:
+  discussion:
+    types: [created, edited, deleted]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Discussion event triggered ✅"
+
+      - name: Show event name
+        run: echo "${{ github.event_name }}"
+
+      - name: Show action
+        run: echo "${{ github.event.action }}"
