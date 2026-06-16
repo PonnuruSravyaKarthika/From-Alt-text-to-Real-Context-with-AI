@@ -1,0 +1,11 @@
+name: Issue Comment Workflow
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Issue comment triggered "
