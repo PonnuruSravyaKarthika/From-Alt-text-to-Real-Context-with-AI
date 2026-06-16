@@ -1,0 +1,19 @@
+name: Discussion Comment Trigger Workflow
+
+on:
+  discussion_comment:
+    types: [created, edited, deleted]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Discussion comment event triggered "
+
+      - name: Show event name
+        run: echo "${{ github.event_name }}"
+
+      - name: Show action
+        run: echo "${{ github.event.action }}"
