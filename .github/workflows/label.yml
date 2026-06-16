@@ -1,19 +1,11 @@
-name: Label Workflow
-
+name: Label Event
+ 
 on:
-  issues:
-    types: [labeled, unlabeled]
-
+  label
+ 
 jobs:
-  demo:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Show action
-        run: echo "Action: ${{ github.event.action }}"
-
-      - name: Show label name
-        run: echo "Label: ${{ github.event.label.name }}"
-
-      - name: Show issue title
-        run: echo "Issue: ${{ github.event.issue.title }}"
+      - name: Label event message
+        run: echo "Label event triggered"
