@@ -1,0 +1,13 @@
+name: Gollum Trigger Workflow
+
+on:
+  gollum
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Wiki updated"
+
+      - run: echo "${{ github.event_name }}"
