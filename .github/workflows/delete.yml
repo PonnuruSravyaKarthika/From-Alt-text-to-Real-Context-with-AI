@@ -1,0 +1,15 @@
+name: Delete Workflow
+
+on:
+  delete
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Delete event triggered"
+
+      - name: Show event name
+        run: echo "${{ github.event_name }}"
