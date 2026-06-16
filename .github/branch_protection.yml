@@ -1,0 +1,10 @@
+name: Branch Protection Trigger
+on:
+  branch_protection_rule
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event
+        run: echo "Triggered by branch_Protection Rule"
