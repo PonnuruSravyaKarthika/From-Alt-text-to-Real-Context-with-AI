@@ -1,0 +1,12 @@
+name: Page Build Workflow
+
+on:
+  page_build
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "GitHub Pages build triggered "
+      - run: echo "${{ github.event_name }}"
