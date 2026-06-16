@@ -1,0 +1,16 @@
+name: PR Review Comment Workflow
+
+on:
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show message
+        run: echo "Code review comment added "
+
+      - name: Show comment
+        run: echo "${{ github.event.comment.body }}"
