@@ -1,0 +1,16 @@
+name: PR Comment Workflow
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show comment
+        run: echo "Comment added "
+
+      - name: Show comment text
+        run: echo "${{ github.event.comment.body }}"
