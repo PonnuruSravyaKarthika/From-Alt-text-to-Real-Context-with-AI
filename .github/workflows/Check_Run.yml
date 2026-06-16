@@ -1,11 +1,13 @@
-name: Check_Run
+name: Check Run
  
 on:
-  check_run
+  check_run:
+    types: [created, completed]
  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Print message
-        run: echo "check run event triggered"
+        run: echo "Check run event triggered"
+ 
