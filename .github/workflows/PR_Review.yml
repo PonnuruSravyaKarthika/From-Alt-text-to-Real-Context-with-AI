@@ -1,0 +1,11 @@
+name: PR Review Workflow
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "PR review submitted "
