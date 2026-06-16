@@ -1,8 +1,7 @@
 name: Issues Workflow
 
 on:
-  issues:
-    types: [opened]
+  issues
 
 jobs:
   demo:
