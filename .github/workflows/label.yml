@@ -1,0 +1,19 @@
+name: Label Workflow
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show action
+        run: echo "Action: ${{ github.event.action }}"
+
+      - name: Show label name
+        run: echo "Label: ${{ github.event.label.name }}"
+
+      - name: Show issue title
+        run: echo "Issue: ${{ github.event.issue.title }}"
