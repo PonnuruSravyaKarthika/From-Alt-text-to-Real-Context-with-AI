@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Public event message
-        run: echo "Repository made public"
+        run: echo "Repository is public"
