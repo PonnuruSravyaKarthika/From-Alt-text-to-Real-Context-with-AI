@@ -1,0 +1,39 @@
+name: Python CI
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Application
+        run: python run.py
+
+      - name: Create staging folder
+        run: |
+          mkdir staging
+          cp -r app staging || true
+          cp -r config staging || true
+          cp -r templates staging || true
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Python-Package
+          path: staging
+
+      - name: Final Message
+        run: echo "Workflow executed successfully "
