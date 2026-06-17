@@ -1,0 +1,12 @@
+name: Watch Trigger Workflow
+
+on:
+  watch:
+    types: [started]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Repository starred "
