@@ -1,0 +1,14 @@
+name: Workflow_Run
+
+on:
+  workflow_run:
+    workflows: ["Push Workflow"]
+    types:
+      - completed
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Second workflow triggered "
