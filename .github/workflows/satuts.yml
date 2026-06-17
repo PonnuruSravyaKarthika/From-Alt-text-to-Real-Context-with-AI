@@ -1,0 +1,11 @@
+name: Status Workflow
+
+on:
+  status
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Status event triggered "
