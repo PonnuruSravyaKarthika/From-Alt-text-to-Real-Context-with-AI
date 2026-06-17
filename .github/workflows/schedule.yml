@@ -1,0 +1,12 @@
+name: Schedule Event
+ 
+on:
+  schedule:
+    - cron: '*/4 * * * *'
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Schedule message
+        run: echo "Scheduled workflow triggered"
